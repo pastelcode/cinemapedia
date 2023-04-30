@@ -13,15 +13,9 @@ class _Ui extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ApplicationTheme.lightTheme,
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            'Hello World!',
-          ),
-        ),
-      ),
+      routerConfig: appRouter,
     );
   }
 }

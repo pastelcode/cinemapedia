@@ -1,3 +1,4 @@
+import 'package:cinemapedia/core/router/router.dart';
 import 'package:cinemapedia/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 
