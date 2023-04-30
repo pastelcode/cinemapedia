@@ -9,17 +9,17 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final appRouter = GoRouter(
   debugLogDiagnostics: true,
   navigatorKey: _rootNavigatorKey,
-  initialLocation: ApplicationRoute.nowPlayingMovies.path,
+  initialLocation: ApplicationRoute.home.path,
   routes: <RouteBase>[
     GoRoute(
-      name: ApplicationRoute.nowPlayingMovies.name,
-      path: ApplicationRoute.nowPlayingMovies.path,
+      name: ApplicationRoute.home.name,
+      path: ApplicationRoute.home.path,
       parentNavigatorKey: _rootNavigatorKey,
       builder: (
         BuildContext context,
         GoRouterState state,
       ) {
-        return const NowPlayingMoviesScreen();
+        return const HomeScreen();
       },
     ),
   ],

@@ -1,13 +1,11 @@
+import 'package:cinemapedia/core/presentation/widgets/widgets.dart';
 import 'package:cinemapedia/features/movies/presentation/providers/providers.dart';
+import 'package:cinemapedia/features/movies/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// {@template moviesList.presentation.screens.moviesListScreen}
-/// An screen for a list of movies titles.
-/// {@endtemplate}
-class NowPlayingMoviesScreen extends StatelessWidget {
-  /// {@macro moviesList.presentation.screens.moviesListScreen}
-  const NowPlayingMoviesScreen({
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
     super.key,
   });
 
@@ -50,27 +48,13 @@ class _ViewState extends ConsumerState<_View> {
       nowPlayingMoviesProvider,
     );
 
-    if (nowPlayingMovies.isEmpty) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-
-    return ListView.builder(
-      itemCount: nowPlayingMovies.length,
-      itemBuilder: (
-        BuildContext context,
-        int index,
-      ) {
-        final movie = nowPlayingMovies[index];
-
-        return ListTile(
-          onTap: () {},
-          title: Text(
-            movie.title,
-          ),
-        );
-      },
+    return Column(
+      children: <Widget>[
+        const CustomAppBar(),
+        MoviesSlideshow(
+          movies: nowPlayingMovies,
+        ),
+      ],
     );
   }
 }

@@ -2,12 +2,10 @@
 /// All routes on the application.
 /// {@endtemplate}
 enum ApplicationRoute {
-  /// The home route.
-  ///
-  /// Should show all movies screen.
-  nowPlayingMovies(
-    name: 'Now playing movies',
-    path: '/now-playing',
+  /// The route to show an overview of different movies categories.
+  home(
+    name: 'Home',
+    path: '/',
   );
 
   /// {@macro core.router.applicationRoute}
