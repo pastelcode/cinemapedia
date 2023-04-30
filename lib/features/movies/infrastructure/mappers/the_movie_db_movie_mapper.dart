@@ -10,9 +10,13 @@ class MovieMapper {
       backdropPath: movieDb.backdropPath.isNotEmpty
           ? 'https://image.tmdb.org/t/p/w500${movieDb.backdropPath}'
           : 'https://maxler.com/local/templates/maxler/assets/img/not-found.png',
-      genreIds: List<String>.from(
-        movieDb.genreIds,
-      ),
+      genreIds: movieDb.genreIds.map(
+        (
+          int id,
+        ) {
+          return id.toString();
+        },
+      ).toList(),
       id: movieDb.id.toString(),
       originalLanguage: movieDb.originalLanguage,
       originalTitle: movieDb.originalTitle,

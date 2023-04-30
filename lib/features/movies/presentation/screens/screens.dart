@@ -1,1 +1,1 @@
-export 'movies_list_screen.dart';
+export 'now_playing_movies_screen.dart';

@@ -28,13 +28,15 @@ class TheMovieDbDataSource implements MoviesDataSource {
       map: response.data as Map<String, dynamic>,
     );
 
-    final movies = theMovieDbResponse.results.where(
-      (
-        TheMovieDbMovieModel theMovieDbMovieModel,
-      ) {
-        return theMovieDbMovieModel.posterPath.isNotEmpty;
-      },
-    ).map(
+    final movies = theMovieDbResponse.results
+        // .where(
+        //   (
+        //     TheMovieDbMovieModel theMovieDbMovieModel,
+        //   ) {
+        //     return theMovieDbMovieModel.posterPath.isNotEmpty;
+        //   },
+        // )
+        .map(
       (
         TheMovieDbMovieModel theMovieDbMovieModel,
       ) {
@@ -44,6 +46,6 @@ class TheMovieDbDataSource implements MoviesDataSource {
       },
     ).toList();
 
-    return [];
+    return movies;
   }
 }
