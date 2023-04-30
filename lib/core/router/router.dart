@@ -1,4 +1,5 @@
 import 'package:cinemapedia/core/router/routes.dart';
+import 'package:cinemapedia/features/movies/movies.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,9 +18,7 @@ final appRouter = GoRouter(
         BuildContext context,
         GoRouterState state,
       ) {
-        return const Scaffold(
-          body: Placeholder(),
-        );
+        return const MoviesListScreen();
       },
     ),
   ],
